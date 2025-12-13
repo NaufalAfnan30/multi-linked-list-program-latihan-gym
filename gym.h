@@ -15,6 +15,7 @@ struct Trainer{ //membuat struct Trainer
     int pengalaman;
     string spesialisasi;
 
+    adrLatihan firstRelasi;
     adrTrainer next;
     adrTrainer prev;
 };
@@ -49,9 +50,9 @@ struct ListKlien{   //membuat struct list klien
 void createListTrainer(ListTrainer &LT);    //membuat create list trainer
 void createListKlien(ListKlien &LK);    //membuat create list klien
 
-adrTrainer createListTrainer(string id, string nama, int pengalaman, string spesialisasi);  //membuat elemen trainer
-adrKlien createListKlien(string nama, int usia, string membership, string tujuan);  //membuat elemen klien
-adrLatihan createListLatihan(adrKlien K, string jadwal, int durasi);    //membuat elemen latihan
+adrTrainer createElemenTrainer(string id, string nama, int pengalaman, string spesialisasi);  //membuat elemen trainer
+adrKlien createElemenKlien(string nama, int usia, string membership, string tujuan);  //membuat elemen klien
+adrLatihan createElemenLatihan(adrKlien K, string jadwal, int durasi);    //membuat elemen latihan
 
 void insertTrainer(ListTrainer &LT, adrTrainer T);  //membuat prosedur insert trainer
 void insertKlien(ListKlien &LK, adrKlien K);    //membuat prosedur insert klien
@@ -61,11 +62,11 @@ void deleteTrainer(ListTrainer &LT, string idTrainer);  //membuat prosedur delet
 void deleteKlien(ListKlien &LK, ListTrainer &LT, string idKlien);   //membuat prosedur delete klien by id
 void deleteLatihan(ListTrainer &LT, string idTrainer);  //membuat prosedur delete latihan by id klien
 
-adrTrainer findTrainer(ListTrainer LT, string idTrainer);   //membuat function find trainer by id
+adrTrainer findTrainerByID(ListTrainer LT, string idTrainer);   //membuat function find trainer by id
 adrKlien findKlien(ListKlien LK, string idKlien);   //membuat function find klien by id untuk proses pengoperasian
-adrKlien findKlienByMembership(ListKlien, string membership);   //membuat function find klien by membership untuk tampilan display
-adrLatihan findLatihan(ListTrainer, string idKlien);    //membuat function find latihan by id untuk proses pengoperasian
-adrLatihan findLatihanByJadwal(ListTrainer, string jadwal); //membuat function find latihan by jadwal untuk tampilan display
+adrKlien findKlienByMembership(ListKlien LK, string membership);   //membuat function find klien by membership untuk tampilan display
+adrLatihan findLatihan(ListTrainer LT, string idKlien);    //membuat function find latihan by id untuk proses pengoperasian
+adrLatihan findLatihanByJadwal(ListTrainer LT, string jadwal); //membuat function find latihan by jadwal untuk tampilan display
 
 void showAllTrainer(ListTrainer LT);    //membuat prosedur show seluruh trainer
 void showAllKlien(ListKlien LK);    //membuat prosedur show seluruh klien
